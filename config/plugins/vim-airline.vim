@@ -1,8 +1,8 @@
 scriptencoding utf-8
 let g:airline_powerline_fonts = g:spacevim_enable_powerline_fonts
 let g:airline_skip_empty_sections = 1
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tmuxline#enabled = 1
+let g:airline#extensions#tabline#enabled = 0
+let g:airline#extensions#tmuxline#enabled = 0
 let g:Powerline_sybols = 'unicode'
 if g:spacevim_buffer_index_type < 3
   let g:airline#extensions#tabline#buffer_idx_mode = 1
@@ -32,7 +32,7 @@ elseif g:spacevim_buffer_index_type == 4
 
 endif
 let g:airline#extensions#tabline#formatter = 'spacevim'
-"let g:airline#extensions#tabline#buffer_nr_show = 1
+let g:airline#extensions#tabline#buffer_nr_show = 0
 "let g:airline#extensions#tabline#buffer_nr_format = '%s:'
 let g:airline#extensions#tabline#fnamemod = ':t'
 let g:airline#extensions#tabline#fnamecollapse = 1
@@ -88,7 +88,7 @@ endif
 let g:airline#extensions#tabline#show_tab_nr = 1
 let g:airline#extensions#tabline#tab_nr_type= 2
 let g:airline#extensions#tabline#show_tab_type = 1
-let g:airline#extensions#tabline#buffers_label = 'BUFFERS'
+let g:airline#extensions#tabline#buffers_label = 'ssss'
 let g:airline#extensions#tabline#tabs_label = 'TABS'
 if g:spacevim_enable_os_fileformat_icon
   let s:sys = SpaceVim#api#import('system')

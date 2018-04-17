@@ -80,5 +80,5 @@ augroup Terminal
 augroup END
 augroup nvimrc_aucmd
     autocmd!
-    autocmd CursorHold,FocusGained,FocusLost * rshada|wshada
+    " autocmd CursorHold,FocusGained,FocusLost * rshada|wshada
 augroup END

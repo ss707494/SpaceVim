@@ -145,7 +145,7 @@ function! SpaceVim#autocmds#VimEnter() abort
   endif
   if SpaceVim#layers#isLoaded('core#tabline')
     call SpaceVim#layers#core#tabline#def_colors()
-    set showtabline=2
+    set showtabline=0
   endif
   call SpaceVim#plugins#projectmanager#RootchandgeCallback()
 endfunction
