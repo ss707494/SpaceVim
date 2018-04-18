@@ -262,8 +262,7 @@ function! SpaceVim#default#keyBindings() abort
 
   " Navigation in command line
   cnoremap <C-a> <Home>
-  cnoremap <C-b> <Left>
-  cnoremap <C-f> <Right>
+  cnoremap <C-b> <Left> cnoremap <C-f> <Right>
 
 
   " Fast saving

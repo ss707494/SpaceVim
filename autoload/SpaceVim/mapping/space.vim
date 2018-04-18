@@ -36,8 +36,8 @@ function! SpaceVim#mapping#space#init() abort
   endif
   nnoremap <silent><nowait> [SPC] :<c-u>LeaderGuide " "<CR>
   vnoremap <silent><nowait> [SPC] :<c-u>LeaderGuideVisual " "<CR>
-  nmap <Space> [SPC]
-  vmap <Space> [SPC]
+  nmap <space><space> [SPC]
+  vmap <space><space> [SPC]
   if g:spacevim_enable_language_specific_leader
     nmap , [SPC]l
     xmap , [SPC]l
@@ -366,7 +366,7 @@ function! SpaceVim#mapping#space#def(m, keys, cmd, desc, is_cmd, ...) abort
 endfunction
 
 function! s:has_map_to_spc() abort
-  return get(g:, 'mapleader', '\') ==# ' '
+  return get(g:, 'mapleader', '\') ==# '12'
 endfunction
 
 function! s:windows_layout_toggle() abort
