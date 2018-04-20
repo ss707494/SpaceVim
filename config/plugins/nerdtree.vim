@@ -1,17 +1,17 @@
 let s:VCOP = SpaceVim#api#import('vim#compatible')
 
-let g:NERDTreeWinPos=get(g:,'NERDTreeWinPos','right')
+let g:NERDTreeWinPos=get(g:,'NERDTreeWinPos','left')
 let g:NERDTreeWinSize=get(g:,'NERDTreeWinSize',31)
 let g:NERDTreeChDirMode=get(g:,'NERDTreeChDirMode',1)
-augroup nerdtree_zvim
-  autocmd!
-  autocmd bufenter *
-        \ if (winnr('$') == 1 && exists('b:NERDTree')
-        \ && b:NERDTree.isTabTree())
-        \|   q
-        \| endif
-  autocmd FileType nerdtree call s:nerdtreeinit()
-augroup END
+" augroup nerdtree_zvim
+  " autocmd!
+  " autocmd bufenter *
+        " \ if (winnr('$') == 1 && exists('b:NERDTree')
+        " \ && b:NERDTree.isTabTree())
+        " \|   q
+        " \| endif
+  " autocmd FileType nerdtree call s:nerdtreeinit()
+" augroup END
 
 
 function! s:nerdtreeinit() abort

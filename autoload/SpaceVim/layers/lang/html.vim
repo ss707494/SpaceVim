@@ -20,7 +20,7 @@ function! SpaceVim#layers#lang#html#plugins() abort
 endfunction
 
 function! SpaceVim#layers#lang#html#config() abort
-  let g:user_emmet_leader_key=get(g:, 'user_emmet_leader_key', '<C-e>')
+  let g:user_emmet_leader_key=get(g:, 'user_emmet_leader_key', '<C-y>')
   augroup spacevim_lang_html
     autocmd!
     autocmd FileType html,css,scss,sass,less,javascript,jsp,vue,eex call s:install_emmet()

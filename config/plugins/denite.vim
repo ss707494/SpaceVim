@@ -8,12 +8,13 @@ let s:denite_options = {
       \ 'default' : {
       \ 'winheight' : 15,
       \ 'mode' : 'insert',
-      \ 'quit' : 'true',
       \ 'highlight_matched_char' : 'MoreMsg',
       \ 'highlight_matched_range' : 'MoreMsg',
       \ 'direction': 'rightbelow',
       \ 'statusline' : has('patch-7.4.1154') ? v:false : 0,
       \ 'prompt' : '➭',
+      \ 'post-action' : 'quit',
+      \ 'auto-preview' : v:true,
       \ }}
 
 function! s:profile(opts) abort
@@ -29,7 +30,7 @@ call s:profile(s:denite_options)
 " buffer source
 call denite#custom#var(
       \ 'buffer',
-      \ 'date_format', '%m-%d-%Y %H:%M:%S')
+      \ 'date_format', '%m-%d%H:%M:%S')
 
 " denite command
 if !s:sys.isWindows
@@ -107,17 +108,18 @@ call denite#custom#var('menu', 'unite_source_menu_compatibility', 1)
 let s:insert_mode_mappings = [
       \ ['jk', '<denite:enter_mode:normal>', 'noremap'],
       \ ['<Tab>', '<denite:move_to_next_line>', 'noremap'],
-      \ ['<C-j>', '<denite:move_to_next_line>', 'noremap'],
+      \ ['<C-j>', '<denite:assign_next_text>', 'noremap'],
       \ ['<S-tab>', '<denite:move_to_previous_line>', 'noremap'],
-      \ ['<C-k>', '<denite:move_to_previous_line>', 'noremap'],
+      \ ['<C-k>', '<denite:assign_previous_text>', 'noremap'],
       \ ['<C-t>', '<denite:do_action:tabopen>', 'noremap'],
       \ ['<C-v>', '<denite:do_action:vsplit>', 'noremap'],
       \ ['<C-s>', '<denite:do_action:split>', 'noremap'],
       \ ['<Esc>', '<denite:enter_mode:normal>', 'noremap'],
       \ ['<C-N>', '<denite:assign_next_matched_text>', 'noremap'],
       \ ['<C-P>', '<denite:assign_previous_matched_text>', 'noremap'],
-      \ ['<Up>', '<denite:assign_previous_text>', 'noremap'],
-      \ ['<Down>', '<denite:assign_next_text>', 'noremap'],
+      \ ['<Up>', '<denite:move_to_previous_line>', 'noremap'],
+      \ ['<Down>', '<denite:move_to_next_line>', 'noremap'],
+      \ ['<Right>', '<denite:do_action:preview>', 'noremap'],
       \ ['<C-Y>', '<denite:redraw>', 'noremap'],
       \ ]
 
@@ -130,6 +132,7 @@ let s:normal_mode_mappings = [
       \ ['<S-tab>', '<denite:move_to_previous_line>', 'noremap'],
       \ ['<C-k>', '<denite:move_to_previous_line>', 'noremap'],
       \ ['gg', '<denite:move_to_first_line>', 'noremap'],
+      \ ['go', '<denite:do_action:preview>', 'noremap'],
       \ ['<C-t>', '<denite:do_action:tabopen>', 'noremap'],
       \ ['<C-v>', '<denite:do_action:vsplit>', 'noremap'],
       \ ['<C-s>', '<denite:do_action:split>', 'noremap'],
