@@ -149,5 +149,8 @@ endfor
 
 unlet s:m s:insert_mode_mappings s:normal_mode_mappings
 
+call denite#custom#filter('matcher/ignore_globs', 'ignore_globs',
+      \ [ '.git/', '.ropeproject/', '__pycache__/',
+      \   'node_modules/'])
 
 " vim:set et sw=2 cc=80:
